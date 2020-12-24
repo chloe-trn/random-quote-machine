@@ -1,3 +1,5 @@
+let newQuote = '';
+let newAuthor = '';
 let colorArr = [
   '#91A6FF',
   '#ebbce4',
@@ -5,15 +7,12 @@ let colorArr = [
   '#A53860',
   '#61C9A8'
 ];
-//function to change color of page on "get quote button click"
+//function to change color of page:
 function changeColor(){
   let newColor = colorArr[Math.floor(colorArr.length * Math.random())];
   document.documentElement.style.setProperty('--mainColor', newColor);
 }
-
-let newQuote = '';
-let newAuthor = '';
-
+//function that pulls new random quote from JSON file every button click:
 function buttonClicked(){
   $.ajax({
     url:'https://gist.githubusercontent.com/chltrn/8dc0865ef5deedc3c33976f0bf9c103f/raw/7f0d96cb67429ce5613f24372b774fe78b3209d2/quotes.js',

@@ -7,12 +7,15 @@
 }
 :root{
   --mainColor:lightblue;
+  --imgUrl:'#';
 }
 body{
   font-family: 'Montserrat', sans-serif;
   line-height: 2;
   font-size: 30px;
   background-color:var(--mainColor);
+  background-image: url('https://raw.githubusercontent.com/chltrn/randomQuoteMachine/main/imgs/img1.jpg');
+  background-repeat: no-repeat;
 }
 .background{
   display: flex;
