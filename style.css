@@ -13,13 +13,15 @@ body{
   line-height: 2;
   font-size: 30px;
   background: var(--url);
-  background-color:white;
+  background-color:#112840;
+  background-size: cover;
 }
 .background{
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  color: #f5f6f7;
 }
 /*Main container*/
 .container{
@@ -27,15 +29,13 @@ body{
   height: auto;
   max-width: 550px;
   width:100%;
-  border-radius: 10px;
+  border-radius: 6px;
   padding: 25px;
-  background-color: white;
+  background-color: rgba(39, 43, 47,0.75);
 }
-.container .quote-author{
+.container #quote-author{
   text-align: right;
   font-size: 20px;
-}
-.container .quote-text{
 }
 
 /*Last row format*/
@@ -46,26 +46,30 @@ body{
   margin-top: 30px;
 }
 /*Social Media  Share Icons*/
-.icons{
-  display: flex;
-  align-items: flex-end;
-}
-#twitter-icon, #tumblr-icon{
+.icons a{
   font-size: 45px;
   padding-right: 20px;
+  display: flex;
+  align-items: flex-end;
+  color:#f5f6f7;
+}
+.icons a:hover{
+  color: #90c2e0;
 }
 /*Submit Button*/
 .btn{
-  border:none;
   height: 45px;
   width: 150px;
   font-size: 20px;
   font-family: inherit;
-  border-radius: 10px;
-  color:white;
+  border-radius: 6px;
+  border-color: white;
+  background-color: rgba(39, 43, 47,0);
+  color: white;
+  cursor: pointer;
 }
 .btn:hover{
-  background-color: inherit;
+  background-color: rgba(39, 43, 47,0.85);
 }
 .btn:focus{
   outline: 0;
