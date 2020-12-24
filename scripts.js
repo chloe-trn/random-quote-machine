@@ -18,5 +18,9 @@ $(document).ready(function() {
     // all custom jQuery will go here
     changeColor();
     $(".btn").on("click",changeColor);
+    $.getJSON('https://raw.githubusercontent.com/chltrn/randomQuoteMachine/main/quotes.json',function(data){
+      console.log(data);
+    });
+
 
 });
