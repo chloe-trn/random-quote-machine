@@ -5,10 +5,14 @@
   margin:0;
   box-sizing: border-box;
 }
+:root{
+  --mainColor:lightblue;
+}
 body{
   font-family: 'Montserrat', sans-serif;
   line-height: 2;
   font-size: 30px;
+  background-color:var(--mainColor);
 }
 .background{
   display: flex;
@@ -16,25 +20,35 @@ body{
   align-items: center;
   height: 100vh;
 }
+/*Main container*/
 .container{
   position:relative;
   height: auto;
   max-width: 550px;
   width:100%;
-  background-color: lightblue;
   border-radius: 10px;
   padding: 25px;
+  background-color: white;
 }
 .container .quote-author{
   text-align: right;
   font-size: 20px;
+  color:var(--mainColor);
 }
+.container .quote-text{
+  color:var(--mainColor);
+}
+.container i{
+  color:var(--mainColor);
+}
+/*Last row format*/
 .last-row{
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   margin-top: 30px;
 }
+/*Social Media  Share Icons*/
 .icons{
   display: flex;
   align-items: flex-end;
@@ -42,9 +56,9 @@ body{
 #twitter-icon, #tumblr-icon{
   font-size: 45px;
   padding-right: 20px;
-
+  color:var(--mainColor);
 }
-
+/*Submit Button*/
 .btn{
   border:none;
   height: 45px;
@@ -52,12 +66,12 @@ body{
   font-size: 20px;
   font-family: inherit;
   border-radius: 10px;
+  background-color:var(--mainColor);
+  color:white;
 }
-
 .btn:hover{
   background-color: inherit;
 }
-
 .btn:focus{
   outline: 0;
 }
