@@ -6,16 +6,14 @@
   box-sizing: border-box;
 }
 :root{
-  --mainColor:lightblue;
-  --imgUrl:'#';
+  --url: url("#");
 }
 body{
   font-family: 'Montserrat', sans-serif;
   line-height: 2;
   font-size: 30px;
-  background-color:var(--mainColor);
-  background-image: url('https://raw.githubusercontent.com/chltrn/randomQuoteMachine/main/imgs/img1.jpg');
-  background-repeat: no-repeat;
+  background: var(--url);
+  background-color:white;
 }
 .background{
   display: flex;
@@ -36,14 +34,10 @@ body{
 .container .quote-author{
   text-align: right;
   font-size: 20px;
-  color:var(--mainColor);
 }
 .container .quote-text{
-  color:var(--mainColor);
 }
-.container i{
-  color:var(--mainColor);
-}
+
 /*Last row format*/
 .last-row{
   display: flex;
@@ -59,7 +53,6 @@ body{
 #twitter-icon, #tumblr-icon{
   font-size: 45px;
   padding-right: 20px;
-  color:var(--mainColor);
 }
 /*Submit Button*/
 .btn{
@@ -69,7 +62,6 @@ body{
   font-size: 20px;
   font-family: inherit;
   border-radius: 10px;
-  background-color:var(--mainColor);
   color:white;
 }
 .btn:hover{

@@ -1,16 +1,20 @@
 let newQuote = '';
 let newAuthor = '';
-let colorArr = [
-  '#91A6FF',
-  '#ebbce4',
-  '#4C3B4D',
-  '#A53860',
-  '#61C9A8'
+let imgArr =[
+  'url("https://raw.githubusercontent.com/chltrn/randomQuoteMachine/main/imgs/img1.jpg")',
+  'url("https://raw.githubusercontent.com/chltrn/randomQuoteMachine/main/imgs/img2.jpg")',
+  'url("https://raw.githubusercontent.com/chltrn/randomQuoteMachine/main/imgs/img1.jpg")',
+  'url("https://raw.githubusercontent.com/chltrn/randomQuoteMachine/main/imgs/img2.jpg")',
+  'url("https://raw.githubusercontent.com/chltrn/randomQuoteMachine/main/imgs/img1.jpg")',
+  'url("https://raw.githubusercontent.com/chltrn/randomQuoteMachine/main/imgs/img2.jpg")',
+  'url("https://raw.githubusercontent.com/chltrn/randomQuoteMachine/main/imgs/img1.jpg")',
+  'url("https://raw.githubusercontent.com/chltrn/randomQuoteMachine/main/imgs/img2.jpg")',
+  'url("https://raw.githubusercontent.com/chltrn/randomQuoteMachine/main/imgs/img1.jpg")',
+  'url("https://raw.githubusercontent.com/chltrn/randomQuoteMachine/main/imgs/img2.jpg")'
 ];
-//function to change color of page:
-function changeColor(){
-  let newColor = colorArr[Math.floor(colorArr.length * Math.random())];
-  document.documentElement.style.setProperty('--mainColor', newColor);
+function changeImg(){
+  let newImg = imgArr[Math.floor(imgArr.length * Math.random())];
+  document.documentElement.style.setProperty('--url',newImg);
 }
 //function that pulls new random quote from JSON file every button click:
 function buttonClicked(){
@@ -25,11 +29,10 @@ function buttonClicked(){
       newAuthor = data.quotes[newIndex].author;
       $(".quote-text").html(newQuote);
       $(".quote-author").html("-"+newAuthor);
-      changeColor();
+      changeImg();
     }
   });
 }
-
 $(document).ready(function() {
     buttonClicked();
     $(".btn").on("click",buttonClicked);
