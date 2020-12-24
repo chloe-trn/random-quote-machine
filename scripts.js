@@ -12,15 +12,30 @@ function changeColor(){
   document.documentElement.style.setProperty('--mainColor', newColor);
 }
 
+let newQuote = '';
+let newAuthor = '';
 
+function buttonClicked(){
+  changeColor();
+  $.ajax({
+    url:'https://gist.githubusercontent.com/chltrn/8dc0865ef5deedc3c33976f0bf9c103f/raw/7f0d96cb67429ce5613f24372b774fe78b3209d2/quotes.js',
+    dataType: 'json',
+    type: 'get',
+    cache: false,
+    success: function(data){
+      let newIndex = Math.floor(data.quotes.length * Math.random());
+      newQuote = data.quotes[newIndex].quote;
+      newAuthor = data.quotes[newIndex].author;
+      console.log(newIndex +"hi");
+      $().
+    }
+  });
+}
 
 $(document).ready(function() {
     // all custom jQuery will go here
     changeColor();
-    $(".btn").on("click",changeColor);
-    $.getJSON('https://raw.githubusercontent.com/chltrn/randomQuoteMachine/main/quotes.json',function(data){
-      console.log(data);
-    });
+    $(".btn").on("click",buttonClicked);
 
 
 });
