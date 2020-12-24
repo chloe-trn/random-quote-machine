@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Montserrat', sans-serif;
+  line-height: 2;
+  font-size: 30px;
+}
+.background{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container{
+  position:relative;
+  height: auto;
+  max-width: 550px;
+  width:100%;
+  background-color: lightblue;
+  border-radius: 10px;
+  padding: 25px;
+}
+.container .quote-author{
+  text-align: right;
+  font-size: 20px;
+}
+.last-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 30px;
+}
+.icons{
+  display: flex;
+  align-items: flex-end;
+}
+#twitter-icon, #tumblr-icon{
+  font-size: 45px;
+  padding-right: 20px;
+
+}
+
+.btn{
+  border:none;
+  height: 45px;
+  width: 150px;
+  font-size: 20px;
+  font-family: inherit;
+  border-radius: 10px;
+}
+
+.btn:hover{
+  background-color: inherit;
+}
+
+.btn:focus{
+  outline: 0;
+}
