@@ -1,3 +1,4 @@
+//global variables
 let newQuote = '';
 let newAuthor = '';
 let imgArr =[
@@ -12,6 +13,11 @@ function changeImg(){
   $("#bgd-img").fadeOut(500, function() {
         $("#bgd-img").attr("src",newImg);
     }).fadeIn(900);
+}
+//function to set twitter intent link:
+function setTwitter(){
+  $("#twitter-icon").attr("href",
+   "https://twitter.com/intent/tweet?text=" + encodeURI('"'+newQuote+'"'+' -'+newAuthor));
 }
 //function that chooses random quote from JSON file:
 function getInfo(){
@@ -28,10 +34,6 @@ function getInfo(){
     }
   });
 }
-function setTwitter(){
-  $("#twitter-icon").attr("href",
-   "https://twitter.com/intent/tweet?text=" + encodeURI('"'+newQuote+'"'+' -'+newAuthor));
-}
 //function that changes quote and background image on button click:
 function buttonClicked(){
   getInfo();
@@ -39,12 +41,11 @@ function buttonClicked(){
   $(".fade").fadeOut(900,function() {
     $("#quote-text").text(newQuote).fadeIn(1600);
     $("#quote-author").text("-"+newAuthor).fadeIn(1600);
-    $("#quote-icon").fadeIn(1600);
+    $(".quote-icon").fadeIn(1600);
     setTwitter();
   });
-
 }
-
+//executes after document is done loading:
 $(document).ready(function() {
     $(".btn").on("click",buttonClicked);
 });

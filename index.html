@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<!--NOTES:
+- link to quotes API - pull quotes + authors
+- make image not resize on responsiveness
+- Coded as part of a FreeCodeCamp curriculum project
+-->
+
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,18 +18,18 @@
   <img class="bgd-img" id="bgd-img"
    src="https://raw.githubusercontent.com/chltrn/randomQuoteMachine/main/imgs/pexels-anand-dandekar-1532771.jpg"
    alt="background image">
+
   <div class="container">
-    <i class="fade fas fa-quote-left" id="quote-icon"></i>
+
+    <i class="fade fas fa-quote-left quote-icon"></i>
     <span class="fade" id="quote-text">Random Quote Generator</span>
-    <div class="fade" id="quote-author"></div>
-    <div class="last-row">
-      <div class="icons">
-        <a id="twitter-icon" target="=_blank">
-          <i class="fab fa-twitter-square"></i>
-        </a>
-      </div>
-      <input class="btn" type="button" value="Get Quote">
-  </div>
+    <div class="inner-container">
+      <a id="twitter-icon" target="=_blank">
+        <i class="fab fa-twitter-square"></i>
+      </a>
+      <div class="fade" id="quote-author">-Someone famous</div>
+    </div>
+    <input class="btn" type="button" value="Get Quote"><br>
   </div>
 </div>
 <!--jQuery import -->

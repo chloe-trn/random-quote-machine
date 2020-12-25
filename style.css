@@ -42,32 +42,33 @@ body{
   padding: 25px;
   background-color: rgba(39, 43, 47,0.75);
 }
+.quote-icon{
+  font-size: 20px;
+  vertical-align: text-top;
+}
 .container #quote-author{
   text-align: right;
   font-size: 23px;
 }
-/*Last row format*/
-.last-row{
+.inner-container{
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  margin-top: 30px;
+  align-items: center;
 }
 /*Social Media  Share Icons*/
-.icons a{
+a{
   font-size: 45px;
   padding-right: 20px;
-  display: flex;
-  align-items: flex-end;
   color:#f5f6f7;
+  cursor: pointer;
 }
-.icons a:hover{
-  color: #90c2e0;
+a:hover{
+  color: rgba(39, 43, 47,0.85);
 }
 /*Submit Button*/
 .btn{
   height: 45px;
-  width: 150px;
+  width: 100%;
   font-size: 20px;
   font-family: inherit;
   border-radius: 6px;
@@ -75,6 +76,7 @@ body{
   background-color: rgba(39, 43, 47,0);
   color: white;
   cursor: pointer;
+  margin-top: 10px;
 }
 .btn:hover{
   background-color: rgba(39, 43, 47,0.85);
