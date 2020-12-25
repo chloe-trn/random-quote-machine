@@ -6,7 +6,7 @@ let imgArr =[
   'https://raw.githubusercontent.com/chltrn/randomQuoteMachine/main/imgs/pexels-min-an-1454794.jpg',
   'https://raw.githubusercontent.com/chltrn/randomQuoteMachine/main/imgs/pexels-pixabay-372166.jpg'
 ];
-//function that chooses random background image:
+//function that chooses random background image and fades the new image in:
 function changeImg(){
   let newImg = imgArr[Math.floor(imgArr.length * Math.random())];
   $("#bgd-img").fadeOut(500, function() {
@@ -28,7 +28,11 @@ function getInfo(){
     }
   });
 }
-//function that changes quote and background image:
+function setTwitter(){
+  $("#twitter-icon").attr("href",
+   "https://twitter.com/intent/tweet?text=" + encodeURI('"'+newQuote+'"'+' -'+newAuthor));
+}
+//function that changes quote and background image on button click:
 function buttonClicked(){
   getInfo();
   changeImg();
@@ -36,9 +40,11 @@ function buttonClicked(){
     $("#quote-text").text(newQuote).fadeIn(1600);
     $("#quote-author").text("-"+newAuthor).fadeIn(1600);
     $("#quote-icon").fadeIn(1600);
+    setTwitter();
   });
+
 }
+
 $(document).ready(function() {
-    //buttonClicked();
     $(".btn").on("click",buttonClicked);
 });
