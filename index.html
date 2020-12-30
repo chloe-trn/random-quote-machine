@@ -15,12 +15,17 @@
 </head>
 <body>
 <div class="background">
-  <img class="bgd-img" id="bgd-img"
-   src="https://raw.githubusercontent.com/chltrn/randomQuoteMachine/main/imgs/pexels-anand-dandekar-1532771.jpg"
-   alt="background image">
+
+  <div class="img-container">
+    <img class="bgd-img" id="bgd-img"
+     src="https://raw.githubusercontent.com/chltrn/randomQuoteMachine/main/imgs/pexels-anand-dandekar-1532771.jpg"
+     alt="background image">
+  </div>
 
   <div class="container">
-
+    <i class="fas fa-info-circle info-icon" onclick="openInfoWindow()"></i>
+    <span class="close-btn" onclick="closeInfoWindow()">close window</span>
+    <span class="info-popup">This app is powered by <strong>Quotable</strong> and <strong>Unsplash</strong> API's. The <strong>Unsplash</strong> API is limited to 50 requests per hour. If this limit is reached, the background image defaults to the initial lighthouse image on each "Get Quote" fetch.</span>
     <i class="fade fas fa-quote-left quote-icon"></i>
     <span class="fade" id="quote-text">Random Quote Generator</span>
     <div class="inner-container">
@@ -31,6 +36,7 @@
     </div>
     <input class="btn" type="button" value="Get Quote"><br>
   </div>
+
 </div>
 <!--jQuery import -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
