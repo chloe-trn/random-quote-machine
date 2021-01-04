@@ -19,27 +19,31 @@ function setTwitter(){
   $("#twitter-icon").attr("href",
    "https://twitter.com/intent/tweet?text=" + encodeURI('"'+newQuote+'"'+' -'+newAuthor));
 }
-// function that chooses random large landscape image from Unsplash API:
-// TODO: https://www.tjvantoll.com/2015/09/13/fetch-and-errors/ <---- integrate this and have the error be defaulting to lighthouse image
-function handleErrors(response) {
-    if (!response.ok) {
-        throw Error(response.statusText);
-    }
-    return response;
-}
+
+
 //function that fades out image fades the new image in:
 function changeImg(){
   $('body').fadeTo('slow', 0.2, function(){
     $(this).css("background-image",'url(' + newImg + ')');
   }).fadeTo('slow', 1);
 }
-async function getImg() {            //async functions return a promise
-  const response = await fetch("https://api.unsplash.com/photos/random/?client_id=JtXB13VTCyZyC4QFPj2cWBpgkD4TwRfMMXbdWCENMaI&orientation=landscape&content_filter=high");
+// function that chooses random large landscape image from Unsplash API:
+async function getImg() {
+  //const response = await fetch("https://api.unsplash.com/photos/random/?client_id=JtXB13VTCyZyC4QFPj2cWBpgkD4TwRfMMXbdWCENMaI&orientation=landscape&content_filter=high");
+  const response = await fetch("https://api.unsplash.com/photos/random/?client_id=JtXB13VTCyZyC4QFPjafwcWBpgkD4TwRfMMXbdWCENMaI&orientation=landscape&content_filter=high");
   console.log(response);
-  const data = await response.json(); //await waits until promise settless and then executes after.
-  console.log(data.urls.regular);
-  newImg = data.urls.raw + '&w=1500&h=750';
+  if(response.status != 200){ // error on client or server side
+    console.log("ERROR");
+    // set background pic to default image
+    newImg = "https://raw.githubusercontent.com/chltrn/randomQuoteMachine/main/imgs/pexels-min-an-1454794.jpg";
+  }else{ // successful fetch
+    const data = await response.json(); //await waits until promise settless and then executes after.
+    console.log(data);
+    console.log(data.urls.regular);
+    newImg = data.urls.raw + '&w=1500&h=750';
+  }
   changeImg();
+
 }
 //function that chooses random quote with author from Quotable API:
 async function getInfo() {            //async functions return a promise

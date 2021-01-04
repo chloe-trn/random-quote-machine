@@ -9,7 +9,7 @@ body{
   line-height: 2;
   font-size: 30px;
   /*Default URL: */
-  background-image:url("https://raw.githubusercontent.com/chltrn/randomQuoteMachine/main/imgs/Webp.net-resizeimage.jpg");
+  background-image:url("background.jpg");
   background-size:cover;
   background-repeat: repeat;
   display:flex;
@@ -151,22 +151,24 @@ a:hover{
 @media screen and (max-width: 400px) {
   body{
     line-height: 1.5;
-    font-size: 22px;
+    font-size: 18px;
   }
   /*Main container:  */
   .container{
-    max-width: 350px;
+    max-width: 320px;
   }
   /*Information button and popup:*/
   .info-icon{
     font-size: 23px;
   }
   .info-popup{
-    max-width:305px;
+    max-width:283px;
     font-size: 14px;
+    top:19px;
+    left:19px;
   }
   .quote-icon,.container #quote-author{
-    font-size: 18px;
+    font-size: 16px;
   }
   .btn{
     height: 35px;
