@@ -1,1 +1,1 @@
-# randomQuoteMachine
+# random-quote-machine
