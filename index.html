@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <!--NOTES:
-- link to quotes API - pull quotes + authors
-- make image not resize on responsiveness
+- catch fetch() error with error function -> default to lighthouse image for Unsplash API
 - Coded as part of a FreeCodeCamp curriculum project
 -->
 
 <html>
+
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
+  <!--CSS import -->
   <link rel="stylesheet" type="text/css" href="style.css">
+  <!--FontAwesome import -->
   <script src="https://kit.fontawesome.com/fd1c611bcf.js" crossorigin="anonymous"></script>
-  <title>Random Quote Machine</title>
+  <title>Random Quote Generator</title>
 </head>
+
 <body>
-<div class="background">
-
-  <div class="img-container">
-    <img class="bgd-img" id="bgd-img"
-     src="https://raw.githubusercontent.com/chltrn/randomQuoteMachine/main/imgs/pexels-anand-dandekar-1532771.jpg"
-     alt="background image">
-  </div>
-
   <div class="container">
     <i class="fas fa-info-circle info-icon" onclick="openInfoWindow()"></i>
     <span class="close-btn" onclick="closeInfoWindow()">close window</span>
     <span class="info-popup">This app is powered by <strong>Quotable</strong> and <strong>Unsplash</strong> API's. The <strong>Unsplash</strong> API is limited to 50 requests per hour. If this limit is reached, the background image defaults to the initial lighthouse image on each "Get Quote" fetch.</span>
+
     <i class="fade fas fa-quote-left quote-icon"></i>
     <span class="fade" id="quote-text">Random Quote Generator</span>
+
     <div class="inner-container">
       <a id="twitter-icon" target="=_blank">
         <i class="fab fa-twitter-square"></i>
       </a>
       <div class="fade" id="quote-author">-Someone famous</div>
     </div>
-    <input class="btn" type="button" value="Get Quote"><br>
+    <div class="btn-container">
+      <input class="btn image-btn" type="button" value="Change Image">
+      <input class="btn quote-btn" type="button" value="Get Quote">
+    </div>
+
   </div>
 
-</div>
 <!--jQuery import -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!--JS-->
+<!--JS import-->
 <script src="scripts.js"></script>
+
 </body>
+
 </html>
