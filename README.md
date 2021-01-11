@@ -1,7 +1,7 @@
 <h1 align="center">Random Quote Machine</h1>
 <h2 align="center"><a  href="https://chloe-trn.github.io/random-quote-machine/">Live Demo</a></h2>
 
-<p align="center"> A responsive random quote generator built as a part of FreeCodeCamp's curriculum. Integrates Quotable API and Unsplash API.</p>
+<p align="center"> A responsive random quote generator built as a part of <a href="https://www.freecodecamp.org/learn">FreeCodeCamp's</a> curriculum. Integrates Quotable API and Unsplash API.</p>
 
 ## Features 
 * Random image access 
