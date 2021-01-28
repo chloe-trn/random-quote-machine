@@ -4,22 +4,6 @@
   margin:0;
   box-sizing: border-box;
 }
-/* body{
-  font-family: 'Montserrat', sans-serif;
-  line-height: 2;
-  font-size: 30px;
-  background-image: url("background.jpg"); 
-  background-size: cover;
-  background-repeat: repeat;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 50vh;
-  color:#f5f6f7;
-  transition: background-image 1.5s linear;
-  background-color: rgba(39, 43, 47,1);
-} */
-
 body{
   background-color: rgba(39, 43, 47,1);
   font-family: 'Montserrat', sans-serif;
@@ -115,7 +99,7 @@ a{
 a:hover{
   color: rgba(255, 255, 255,1);
 }
-/*Submit Button: */
+/*Buttons: */
 .btn-container{
   display: flex;
   justify-content: space-between;
