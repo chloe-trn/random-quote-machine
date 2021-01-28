@@ -167,12 +167,13 @@ a:hover{
     height: 40px;
     font-size: 16px;
     margin-top: 35px;
+    width: 45%;
   }
 }
 @media screen and (max-width: 400px) {
   body{
     line-height: 1.5;
-    font-size: 18px;
+    font-size: 17px;
   }
   /*Main container:  */
   .container{
@@ -180,7 +181,7 @@ a:hover{
   }
   /*Information button and popup:*/
   .info-icon{
-    font-size: 23px;
+    font-size: 22px;
   }
   .info-popup{
     max-width:283px;
@@ -189,11 +190,11 @@ a:hover{
     left:19px;
   }
   .quote-icon,.container #quote-author{
-    font-size: 16px;
+    font-size: 15px;
   }
   .btn{
     height: 35px;
-    font-size: 13px;
+    font-size: 11px;
     margin-top: 30px;
   }
 }
