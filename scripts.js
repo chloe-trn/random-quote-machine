@@ -1,7 +1,8 @@
 // global variables:
 let newQuote = '';
 let newAuthor = '';
-let newImg = "";
+let newImg = "";   // next image that will be faded in 
+let waitingImg = "";  //  image that is waiting to be the next image faded in 
 let quoteFetchStatus = false;
 let defaultImg = "background.jpg";
 
@@ -22,20 +23,20 @@ function setTwitter(){
 }
 // fade out background image and fade the new image in:
 function changeImg(){
-  $('body').fadeTo('slow', 0.2, function(){
-    $(this).css("background-image",'url(' + newImg + ')');
-  }).fadeTo('slow', 1);
+  $("#bgd-img").fadeOut(1200, function() {
+    $("#bgd-img").attr("src",newImg);
+  }).fadeIn(1200);
+  return false;
 }
-// fetch random large landscape image from Unsplash API:
+// fetch random image from Unsplash API:
 async function getImg() {
   const response = await fetch("https://api.unsplash.com/photos/random/?client_id=JtXB13VTCyZyC4QFPj2cWBpgkD4TwRfMMXbdWCENMaI&orientation=landscape&content_filter=high");
   if(response.status != 200){ // error on client or server side
-    newImg = defaultImg ; // set background pic to default image
+    waitingImg = defaultImg ; // set background pic to default image
   }else{ // successful fetch
     const data = await response.json(); //await waits until promise settless and then executes after.
-    newImg = data.urls.raw + '&w=1500&h=750'; // get the random image url and change it to have width = 1500
+    waitingImg = data.urls.raw + '&w=1500&h=750'; // get the random image url and change it to have width = 1500
   }
-  changeImg();
 }
 // fetch random quote with author from Quotable API:
 async function getInfo() {
@@ -63,15 +64,24 @@ async function getInfo() {
   }
 }
 // change quote, author, and background image on button click:
-function buttonClicked(){
+function handleGetQuoteClick(){
   // check if info-window is visible:
   if( $(".info-popup").css('visibility').toLowerCase() == 'visible') {
     closeInfoWindow(); //close it
   }
   getInfo();
 }
+// fetch new image and change the image on button click:
+function handleGetImageClick(){
+    newImg = waitingImg; 
+    getImg();
+    changeImg();
+}
 //execute after document is done loading:
 $(document).ready(function() {
-    $(".quote-btn").on("click",buttonClicked);  // listen for button click event
-    $(".image-btn").on("click",getImg);
+    // set the initial waiting image 
+    getImg();
+    // listen for button click events
+    $(".quote-btn").on("click",handleGetQuoteClick);  
+    $(".image-btn").on("click",handleGetImageClick);
 });
