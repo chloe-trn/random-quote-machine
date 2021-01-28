@@ -23,9 +23,9 @@ function setTwitter(){
 }
 // fade out background image and fade the new image in:
 function changeImg(){
-  $("#bgd-img").fadeOut(1200, function() {
+  $("#bgd-img").fadeOut(900, function() {
     $("#bgd-img").attr("src",newImg);
-  }).fadeIn(1200);
+  }).fadeIn(1000);
   return false;
 }
 // fetch random image from Unsplash API:
