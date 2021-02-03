@@ -111,13 +111,16 @@ a:hover{
   font-family: inherit;
   border-radius: 6px;
   border-color:rgba(245, 246, 247, 0.2);
-  background-color: rgba(39, 43, 47,0);
+  background-color: rgba(39, 43, 47,1);
   color: rgba(245, 246, 247, 0.9);
   cursor: pointer;
   margin-top: 40px;
 }
 .btn:hover{
   background-color: rgba(65, 76, 90, 0.85);
+}
+.btn:active{
+  background-color: rgba(39, 43, 47,1);
 }
 .btn:focus{
   outline: 0;
